@@ -4,6 +4,9 @@ import House from "../images/home.jpg";
 import Pet from "../images/Pet.png";
 import SmallLogo from "../images/SmallLogo.png";
 import Eco from "../images/Eco.png";
+import Facebook from "../images/facebook.jpg";
+import Instagram from "../images/instagram.png";
+import Twitter from "../images/twitter.png";
 
 class Home extends React.Component {
   state = {};
@@ -84,6 +87,7 @@ class Home extends React.Component {
       <Card.Header style={{color: "white"}}><span style={{textAlign: "center"}}><Icon name="star" size="big"/><Icon name="star" size="big"/><Icon name="star" size="big"/><Icon name="star" size="big"/><Icon name="star" size="big"/></span>
       <br/>
       <br/>No more ants!</Card.Header>
+      <br/>
       <Card.Description style={{color: "white"}}>
       Since Bright Pest Solutions sprayed my house a few months ago I haven’t seen anymore ants in my home, even with all the construction in my neighborhood. Such a relief. 
       </Card.Description>
@@ -97,6 +101,7 @@ class Home extends React.Component {
           <Card.Header style={{color: "white"}}><span style={{textAlign: "center"}}><Icon name="star" size="big"/><Icon name="star" size="big"/><Icon name="star" size="big"/><Icon name="star" size="big"/><Icon name="star" size="big"/></span>
       <br/>
       <br/>Peace of Mind!</Card.Header>
+      <br/>
       <Card.Description style={{color: "white"}}> 
       Just so happy with Bright Pest Solutions results. I feel a great peace of mind knowing that I’m protecting my home from insects while keeping my children and pets safe from harsh chemicals.
       </Card.Description>
@@ -110,6 +115,7 @@ class Home extends React.Component {
           <Card.Header style={{color: "white"}}><span style={{textAlign: "center"}}><Icon name="star" size="big"/><Icon name="star" size="big"/><Icon name="star" size="big"/><Icon name="star" size="big"/><Icon name="star" size="big"/></span>
       <br/>
       <br/>We love Bright Pest Solutions!</Card.Header>
+      <br/>
       <Card.Description style={{color: "white"}}>
       Thanks so much for your professional and friendly services. I’m so thrilled with the results and the process. Thank you. 
       </Card.Description>
@@ -120,6 +126,12 @@ class Home extends React.Component {
       </Card>
           </Card.Group>
         </div>
+        <div className="container2" style={{marginTop: "-100px"}}>
+          <span style={{marginRight: "5px"}}><Image src={Facebook} size="mini" style={{height: "35px", width: "55px"}}/></span>
+          <span style={{marginRight: "10px"}}><Image src={Instagram} size="mini"/></span>
+          <span><Image src={Twitter} size="mini"/></span>
+        </div>
+        <p style={{textAlign: "center", marginBottom: "50px"}}>lets be social</p>
       </div>
     );
   }

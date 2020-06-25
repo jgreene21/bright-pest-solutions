@@ -12,7 +12,7 @@ class Navbar extends React.Component {
       <Container>
         <div className="contact">
         <Image src={Logo} size="small" as="a" href="/"/>
-        <div style={{marginTop: "70px", marginRight: "40px"}}>
+        <div style={{marginTop: "40px", marginRight: "40px"}}>
         <h3>Call Now
         <br/>1-800-BYE-PEST</h3>
         </div>

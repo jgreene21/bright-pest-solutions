@@ -17,6 +17,16 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
+.container2 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.icon {
+  height: "50px";
+  width: "50px"
+}
 
 .bugs {
   border: 1px solid #f5ce42 !important;
