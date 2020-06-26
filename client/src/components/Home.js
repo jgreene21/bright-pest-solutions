@@ -4,18 +4,13 @@ import House from "../images/home.jpg";
 import Pet from "../images/Pet.png";
 import SmallLogo from "../images/SmallLogo.png";
 import Eco from "../images/Eco.png";
-import Facebook from "../images/facebook.jpg";
-import Instagram from "../images/instagram.png";
-import Twitter from "../images/twitter.png";
+
 import NoContract from "../images/NoContract.png";
+import ContactForm from "./ContactForm";
+import SocialMedia from "./SocialMedia";
 
 class Home extends React.Component {
-  state = {};
-
-  handleChange = (e, { value }) => this.setState({ value });
-
   render() {
-    const { value } = this.state;
     return (
       <div className="content" style={{ marginTop: "50px" }}>
         <Grid stackable columns={2}>
@@ -23,108 +18,16 @@ class Home extends React.Component {
             <Image src={House} />
           </Grid.Column>
           <Grid.Column width={4}>
-            <Form className="yellow-muted" style={{ padding: "35px" }}>
-              <Header style={style.form}>How May We Help You?</Header>
-              <br />
-              <Form.Field>
-                <label
-                  style={{
-                    fontFamily: "Poppins",
-                    fontWeight: "normal",
-                    fontSize: "13px",
-                    lineHeight: "19px",
-                  }}
-                >
-                  Name:
-                </label>
-                <input placeholder="" />
-              </Form.Field>
-              <Form.Field>
-                <label
-                  style={{
-                    fontFamily: "Poppins",
-                    fontWeight: "normal",
-                    fontSize: "13px",
-                    lineHeight: "19px",
-                  }}
-                >
-                  Email:
-                </label>
-                <input placeholder="" />
-              </Form.Field>
-              <Form.Field>
-                <label
-                  style={{
-                    fontFamily: "Poppins",
-                    fontWeight: "normal",
-                    fontSize: "13px",
-                    lineHeight: "19px",
-                  }}
-                >
-                  Phone:
-                </label>
-                <input placeholder="" />
-              </Form.Field>
-              <Form.Group inline>
-                <label
-                  style={{
-                    fontFamily: "Poppins",
-                    fontWeight: "normal",
-                    fontSize: "13px",
-                    lineHeight: "19px",
-                  }}
-                >
-                  Preference:
-                </label>
-                <Form.Radio
-                  style={{
-                    fontFamily: "Poppins",
-                    fontWeight: "normal",
-                    fontSize: "13px",
-                    lineHeight: "19px",
-                  }}
-                  label="email"
-                  value="email"
-                  checked={value === "email"}
-                  onChange={this.handleChange}
-                />
-                <Form.Radio
-                  style={{
-                    fontFamily: "Poppins",
-                    fontWeight: "normal",
-                    fontSize: "13px",
-                    lineHeight: "19px",
-                  }}
-                  label="phone"
-                  value="phone"
-                  checked={value === "phone"}
-                  onChange={this.handleChange}
-                />
-              </Form.Group>
-              <Form.Field>
-                <label
-                  style={{
-                    fontFamily: "Poppins",
-                    fontWeight: "normal",
-                    fontSize: "13px",
-                    lineHeight: "19px",
-                  }}
-                >
-                  Message:
-                </label>
-              </Form.Field>
-              <Form.TextArea style={{ height: "242px" }}></Form.TextArea>
-              <Button type='submit' style={style.button}>Submit</Button>
-            </Form>
+            <ContactForm />
           </Grid.Column>
         </Grid>
         <br />
         <div className="container">
-          <Image src={Pet} /> <Image src={SmallLogo} /><Image src={NoContract} style={{width: "85px", height: "80px", marginTop: "10px"}}/>
+          <Image src={Pet} /> <Image src={SmallLogo} style={{marginRight: "-20px"}}/><Image src={NoContract} style={{width: "85px", height: "80px", marginTop: "10px"}}/>
         </div>
-        <div className="container">
+        <div className="container" style={{marginLeft: "10px"}}>
           <span style={style.promise}>Pet/Kid Friendly</span>
-          <span style={style.promise} style={{marginLeft: "10px"}}>Professional Service</span>
+          <span style={style.promise}>Professional Service</span>
           <span style={style.promise}>No Contracts</span>
         </div>
         <Segment
@@ -239,48 +142,19 @@ class Home extends React.Component {
             </Card>
           </Card.Group>
         </div>
-        <div className="container2" style={{ marginTop: "-100px" }}>
-          <span style={{ marginRight: "5px" }}>
-            <Image
-              src={Facebook}
-              size="mini"
-              style={{ height: "35px", width: "55px" }}
-            />
-          </span>
-          <span style={{ marginRight: "10px" }}>
-            <Image src={Instagram} size="mini" />
-          </span>
-          <span>
-            <Image src={Twitter} size="mini" />
-          </span>
-        </div>
-        <p style={style.social}>lets be social</p>
+          <SocialMedia />
       </div>
     );
   }
 }
 
 const style = {
-  form: {
-    fontFamily: "Poppins",
-    fontWeight: 300,
-    fontSize: "18px",
-    lineHeight: "27px",
-    textAlign: "center",
-  },
-  field: {
-    form: {
-      fontFamily: "Poppins !important",
-      fontWeight: "normal",
-      fontSize: "13px",
-      lineHeight: "19px",
-    },
-  },
   promise: {
     fontFamily: "Poppins",
     fontWeight: 300,
     fontSize: "13px",
     lineHeight: "18px",
+    marginLeft: "10px",
   },
   welcome: {
     fontFamily: "Poppins",
@@ -334,23 +208,6 @@ const style = {
     textAlign: "right",
     border: "none",
   },
-  social: {
-    fontFamily: "Poppins",
-    fontWeight: 300,
-    fontSize: "10px",
-    lineHeight: "13px",
-    textAlign: "center",
-    marginTop: "10px",
-    marginBottom: "50px",
-  },
-  button: {
-    backgroundColor: "white",
-    color: "#f5ce42",
-    fontFamily: "poppins",
-    fontWeight: "normal",
-    fontSize: "13px",
-    lineHeight: "19px",
-  }
 };
 
 export default Home;

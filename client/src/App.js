@@ -6,10 +6,10 @@ import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./components/Login";
 import { Switch, Route } from "react-router-dom";
-import { Container } from "semantic-ui-react";
 import FetchAdmin from "./admin/FetchAdmin";
 import Footer from "./components/Footer";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 const App = () => (
   <Fragment>
@@ -18,6 +18,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/oursolution" component={About} />
+        <Route exact path="/contact" component={Contact} />
         {/* <ProtectedRoute exact path="/adminpanel" component={AdminPanel} /> */}
         <Route exact path="/login" component={Login} />
         <Route component={NoMatch} />

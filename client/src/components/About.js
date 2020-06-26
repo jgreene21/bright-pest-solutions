@@ -1,12 +1,10 @@
 import React from "react";
-import { Segment, Image, Container, Grid } from "semantic-ui-react";
+import { Image, Container, Grid } from "semantic-ui-react";
 import Pet from "../images/Pet.jpg";
 import NoContract from "../images/NoContract.png";
 import AntGif from "../images/ants.gif";
 import Jeff from "../images/Jeff.png";
-import Facebook from "../images/facebook.jpg";
-import Instagram from "../images/instagram.png";
-import Twitter from "../images/twitter.png";
+import SocialMedia from "./SocialMedia";
 
 class About extends React.Component {
   render() {
@@ -20,7 +18,7 @@ class About extends React.Component {
             </h4>
           </Grid.Column>
           <Grid.Column>
-            <Image src={AntGif} fluid />
+            <Image src={AntGif} style={{marginRight: "20px"}} />
           </Grid.Column>
         </Grid>
 
@@ -60,35 +58,20 @@ class About extends React.Component {
             </p>
           </Grid.Column>
         </Grid>
-        <Grid stackable columns={2} style={{marginBottom: "50px"}}>
+        <Grid stackable columns={2} style={{marginBottom: "125px"}}>
           <Grid.Column>
             <h2 style={style.header}>MEET OUR TECHNICIAN</h2>
             <p style={style.description}>
-              Jeff is a california native residing in beautiful Utah and
-              attending the Univeristy of Utah where he’s majoring in business
-              and entrepreunership.
+              Jeff is a California native residing in beautiful Utah and
+              attending the University of Utah where he’s majoring in business
+              and entrepreneurship.
             </p>
           </Grid.Column>
           <Grid.Column>
             <Image src= {Jeff} style={{marginTop: "-100px"}}/>
           </Grid.Column>
         </Grid>
-        <div className="container2">
-          <span style={{ marginRight: "5px" }}>
-            <Image
-              src={Facebook}
-              size="mini"
-              style={{ height: "35px", width: "55px" }}
-            />
-          </span>
-          <span style={{ marginRight: "10px" }}>
-            <Image src={Instagram} size="mini" />
-          </span>
-          <span>
-            <Image src={Twitter} size="mini" />
-          </span>
-        </div>
-        <p style={style.social}>lets be social</p>
+        <SocialMedia />
       </Container>
     );
   }
@@ -115,15 +98,6 @@ const style = {
     fontWeight: "normal",
     fontSize: "17px",
     lineHeight: "25px",
-  },
-  social: {
-    fontFamily: "Poppins",
-    fontWeight: 300,
-    fontSize: "10px",
-    lineHeight: "13px",
-    textAlign: "center",
-    marginTop: "10px",
-    marginBottom: "50px",
   },
 };
 
