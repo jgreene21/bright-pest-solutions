@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Image,
-  Form,
-  Header,
-  Grid,
-  Segment,
-  Card,
-  Icon,
-} from "semantic-ui-react";
+import {Image, Form, Header, Grid, Segment, Card, Icon, Button} from "semantic-ui-react";
 import House from "../images/home.jpg";
 import Pet from "../images/Pet.png";
 import SmallLogo from "../images/SmallLogo.png";
@@ -15,6 +7,7 @@ import Eco from "../images/Eco.png";
 import Facebook from "../images/facebook.jpg";
 import Instagram from "../images/instagram.png";
 import Twitter from "../images/twitter.png";
+import NoContract from "../images/NoContract.png";
 
 class Home extends React.Component {
   state = {};
@@ -33,49 +26,106 @@ class Home extends React.Component {
             <Form className="yellow-muted" style={{ padding: "35px" }}>
               <Header style={style.form}>How May We Help You?</Header>
               <br />
-              <Form.Field >
-                <label style={{fontFamily: "Poppins", fontWeight: "normal", fontSize: "13px", lineHeight: "19px",}}>Name:</label>
+              <Form.Field>
+                <label
+                  style={{
+                    fontFamily: "Poppins",
+                    fontWeight: "normal",
+                    fontSize: "13px",
+                    lineHeight: "19px",
+                  }}
+                >
+                  Name:
+                </label>
                 <input placeholder="" />
               </Form.Field>
               <Form.Field>
-                <label style={{fontFamily: "Poppins", fontWeight: "normal", fontSize: "13px", lineHeight: "19px",}}>Email:</label>
+                <label
+                  style={{
+                    fontFamily: "Poppins",
+                    fontWeight: "normal",
+                    fontSize: "13px",
+                    lineHeight: "19px",
+                  }}
+                >
+                  Email:
+                </label>
                 <input placeholder="" />
               </Form.Field>
-              <Form.Field >
-                <label style={{fontFamily: "Poppins", fontWeight: "normal", fontSize: "13px", lineHeight: "19px",}}>Phone:</label>
+              <Form.Field>
+                <label
+                  style={{
+                    fontFamily: "Poppins",
+                    fontWeight: "normal",
+                    fontSize: "13px",
+                    lineHeight: "19px",
+                  }}
+                >
+                  Phone:
+                </label>
                 <input placeholder="" />
               </Form.Field>
-              <Form.Group inline >
-                <label style={{fontFamily: "Poppins", fontWeight: "normal", fontSize: "13px", lineHeight: "19px",}}>Preference:</label>
-                <Form.Radio style={{fontFamily: "Poppins", fontWeight: "normal", fontSize: "13px", lineHeight: "19px",}}
+              <Form.Group inline>
+                <label
+                  style={{
+                    fontFamily: "Poppins",
+                    fontWeight: "normal",
+                    fontSize: "13px",
+                    lineHeight: "19px",
+                  }}
+                >
+                  Preference:
+                </label>
+                <Form.Radio
+                  style={{
+                    fontFamily: "Poppins",
+                    fontWeight: "normal",
+                    fontSize: "13px",
+                    lineHeight: "19px",
+                  }}
                   label="email"
                   value="email"
                   checked={value === "email"}
                   onChange={this.handleChange}
                 />
-                <Form.Radio style={{fontFamily: "Poppins", fontWeight: "normal", fontSize: "13px", lineHeight: "19px",}}
-                  label ="phone"
+                <Form.Radio
+                  style={{
+                    fontFamily: "Poppins",
+                    fontWeight: "normal",
+                    fontSize: "13px",
+                    lineHeight: "19px",
+                  }}
+                  label="phone"
                   value="phone"
                   checked={value === "phone"}
                   onChange={this.handleChange}
                 />
               </Form.Group>
               <Form.Field>
-                <label style={{fontFamily: "Poppins", fontWeight: "normal", fontSize: "13px", lineHeight: "19px",}}>Message:</label>
+                <label
+                  style={{
+                    fontFamily: "Poppins",
+                    fontWeight: "normal",
+                    fontSize: "13px",
+                    lineHeight: "19px",
+                  }}
+                >
+                  Message:
+                </label>
               </Form.Field>
-              <Form.TextArea style={{height: "300px"}}>
-                </Form.TextArea>
+              <Form.TextArea style={{ height: "242px" }}></Form.TextArea>
+              <Button type='submit' style={style.button}>Submit</Button>
             </Form>
           </Grid.Column>
         </Grid>
         <br />
         <div className="container">
-          <Image src={Pet} /> <Image src={SmallLogo} /> <Image src={Eco} />
+          <Image src={Pet} /> <Image src={SmallLogo} /><Image src={NoContract} style={{width: "85px", height: "80px", marginTop: "10px"}}/>
         </div>
         <div className="container">
           <span style={style.promise}>Pet/Kid Friendly</span>
-          <span style={style.promise}>Professional Service</span>
-          <span style={style.promise}>Eco Friendly</span>
+          <span style={style.promise} style={{marginLeft: "10px"}}>Professional Service</span>
+          <span style={style.promise}>No Contracts</span>
         </div>
         <Segment
           className="yellow-muted"
@@ -98,11 +148,18 @@ class Home extends React.Component {
             marginBottom: "100px",
           }}
         >
-          <Segment className="bugs">Customers Love Us! Bugs Hate Us!</Segment>
+          <Segment className="bugs">
+            <p style={style.motto}>Customers love us! Bugs hate us!</p>
+          </Segment>
         </div>
         <div
           className="container"
-          style={{ marginTop: "-75px", marginBottom: "150px" }}
+          style={{
+            marginTop: "-75px",
+            marginBottom: "150px",
+            marginLeft: "10px",
+            marginRight: "10px",
+          }}
         >
           <Card.Group itemsPerRow={3}>
             <Card className="review">
@@ -197,9 +254,7 @@ class Home extends React.Component {
             <Image src={Twitter} size="mini" />
           </span>
         </div>
-        <p style={style.social}>
-          lets be social
-        </p>
+        <p style={style.social}>lets be social</p>
       </div>
     );
   }
@@ -246,6 +301,16 @@ const style = {
     fontSize: "13px",
     lineHeight: "19px",
   },
+  motto: {
+    fontFamily: "Poppins",
+    fontStyle: "normal",
+    fontWeight: "500",
+    fontSize: "18px",
+    lineHeight: "21px",
+    lineSpacing: "3",
+    textAlign: "center",
+    color: "#F5CE42",
+  },
   title: {
     fontFamily: "Poppins",
     fontWeight: 600,
@@ -274,9 +339,17 @@ const style = {
     fontWeight: 300,
     fontSize: "10px",
     lineHeight: "13px",
-    textAlign: "center", 
+    textAlign: "center",
     marginTop: "10px",
-    marginBottom: "50px"
+    marginBottom: "50px",
+  },
+  button: {
+    backgroundColor: "white",
+    color: "#f5ce42",
+    fontFamily: "poppins",
+    fontWeight: "normal",
+    fontSize: "13px",
+    lineHeight: "19px",
   }
 };
 

@@ -18,18 +18,18 @@ class Navbar extends React.Component {
             </div>
           </div>
         </Container>
-        <StyledMenu as={Menu} borderless inverted className="yellow">
+        <StyledMenu as={Menu} borderless inverted className="yellow" style={{marginTop: "-20px"}}>
           <Menu.Menu position="right">
             <Link to="/">
-              <Menu.Item style={style.menu}>Home</Menu.Item>
+              <Menu.Item className="nav" style={style.menu}>Home</Menu.Item>
             </Link>
             <Link to="/oursolution">
-              <Menu.Item style={style.menu}>
+              <Menu.Item className="nav" style={style.menu}>
                 Our Solution
               </Menu.Item>
             </Link>
             <Link to="/contact">
-              <Menu.Item style={style.menu}>Contact Us</Menu.Item>
+              <Menu.Item className="nav" style={style.menu}>Contact Us</Menu.Item>
             </Link>
           </Menu.Menu>
         </StyledMenu>
@@ -60,6 +60,7 @@ const style = {
     fontWeight: "normal",
     fontSize: "18px",
     lineHeight: "27px",
+    marginTop: "-10px"
   },
   menu: {
     fontFamily: "Poppins",
@@ -68,7 +69,7 @@ const style = {
     fontSize: "14px",
     lineHeight: "21px",
     marginRight: "50px" 
-  }
+  },
 };
 
 const StyledMenu = styled.div`

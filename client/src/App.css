@@ -35,11 +35,6 @@
   width: 60%;
   text-align: center;
   color: #f5ce42;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 21px;
-  letter-spacing: 3px;
 }
 
 .footer {
@@ -67,3 +62,7 @@
   flex-grow: 1;
   order: 0;
 }
+
+/* .menu:hover {
+  text-decoration: underline;
+} */
