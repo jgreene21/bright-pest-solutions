@@ -1,7 +1,5 @@
 import React from 'react';
-import SmLogo from '../images/smlogo.png'
-import { Link } from 'react-router-dom';
-import {Image, Icon} from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 
 const Footer = () => (
   <div className="footer" align="right">

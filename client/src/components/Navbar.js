@@ -3,23 +3,25 @@ import { AuthConsumer } from "../providers/AuthProvider";
 import { Link, withRouter } from "react-router-dom";
 import { Image, Container, Menu } from "semantic-ui-react";
 import Logo from "../images/LargeLogo.jpg";
-import styled from "styled-components";
+import Header from "../images/Header.svg";
 
 class Navbar extends React.Component {
   render() {
     return (
       <>
-        <Container>
+        <Container style={{marginBottom: "-30px"}}>
           <div className="contact">
             <Image src={Logo} size="small" as="a" href="/" />
-            <div style={{ marginTop: "40px", marginRight: "40px" }}>
+            <div style={{ marginTop: "40px", marginRight: "60px" }}>
               <p style={style.call}>Call Now</p>
               <p style={style.number}>1-800-BYE-PEST</p>
             </div>
           </div>
         </Container>
-        <StyledMenu as={Menu} borderless inverted className="yellow" style={{marginTop: "-20px"}}>
-          <Menu.Menu position="right">
+        <div className="menu-container">
+        <Image src={Header} style={{marginLeft: "70px"}}/>
+        <Menu borderless style={{border: "none", boxShadow: "none"}}>
+          <Menu.Menu position="right" style={{position: "absolute", right: "140px", bottom: "50px", color: "white"}}>
             <Link to="/">
               <Menu.Item className="nav" style={style.menu}>Home</Menu.Item>
             </Link>
@@ -32,7 +34,8 @@ class Navbar extends React.Component {
               <Menu.Item className="nav" style={style.menu}>Contact Us</Menu.Item>
             </Link>
           </Menu.Menu>
-        </StyledMenu>
+          </Menu>
+          </div>
       </>
     );
   }
@@ -71,35 +74,5 @@ const style = {
     marginRight: "50px" 
   },
 };
-
-const StyledMenu = styled.div`
-   {
-    position: relative;
-    z-index: 1;
-    display: flex;
-
-    &:before,
-    &:after {
-      display: block;
-      height: 75%;
-      left: 0;
-      position: absolute;
-      right: 0;
-      z-index: -1;
-    }
-
-    &:before {
-      top: 0;
-      transform: skewY(-1deg);
-      transform-origin: 0% 0;
-    }
-
-    &:after {
-      bottom: 0;
-      transform: skewY(0deg);
-      transform-origin: 100%;
-    }
-  }
-`;
 
 export default withRouter(ConnectedNavbar);

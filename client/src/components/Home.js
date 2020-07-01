@@ -1,18 +1,24 @@
 import React from "react";
-import {Image, Form, Header, Grid, Segment, Card, Icon, Button} from "semantic-ui-react";
+import {
+  Image,
+  Grid,
+  Segment,
+  Card,
+  Icon,
+  BreadcrumbDivider,
+} from "semantic-ui-react";
 import House from "../images/home.jpg";
 import Pet from "../images/Pet.png";
 import SmallLogo from "../images/SmallLogo.png";
-import Eco from "../images/Eco.png";
-
 import NoContract from "../images/NoContract.png";
 import ContactForm from "./ContactForm";
 import SocialMedia from "./SocialMedia";
+import StarRating from "./StarRating";
 
 class Home extends React.Component {
   render() {
     return (
-      <div className="content" style={{ marginTop: "50px" }}>
+      <div className="content">
         <Grid stackable columns={2}>
           <Grid.Column width={12}>
             <Image src={House} />
@@ -23,12 +29,21 @@ class Home extends React.Component {
         </Grid>
         <br />
         <div className="container">
-          <Image src={Pet} /> <Image src={SmallLogo} style={{marginRight: "-20px"}}/><Image src={NoContract} style={{width: "85px", height: "80px", marginTop: "10px"}}/>
+          <Image src={Pet} />{" "}
+          <Image src={SmallLogo} style={{ marginRight: "-20px" }} />
+          <Image
+            src={NoContract}
+            style={{ width: "85px", height: "80px", marginTop: "10px" }}
+          />
         </div>
-        <div className="container" style={{marginLeft: "10px"}}>
+        <div className="container" style={{ marginLeft: "10px" }}>
           <span style={style.promise}>Pet/Kid Friendly</span>
-          <span style={style.promise}>Professional Service</span>
-          <span style={style.promise}>No Contracts</span>
+          <span style={style.promise} style={{ marginLeft: "30px" }}>
+            Professional Service
+          </span>
+          <span style={style.promise} style={{ marginLeft: "-20px" }}>
+            No Contracts
+          </span>
         </div>
         <Segment
           className="yellow-muted"
@@ -39,7 +54,7 @@ class Home extends React.Component {
           </h3>
           <br />
           <p style={style.about}>
-            Brief description of company and services go here{" "}
+            Brief description of company and services go here
           </p>
           <br />
         </Segment>
@@ -64,18 +79,15 @@ class Home extends React.Component {
             marginRight: "10px",
           }}
         >
-          <Card.Group itemsPerRow={3}>
+          <Card.Group itemsPerRow={3} style={{ margin: "15px" }}>
             <Card className="review">
               <Card.Content>
                 <Card.Header style={style.title}>
-                  <span style={{ textAlign: "center" }}>
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                  </span>
-                  <br />
+                  <div style={{ textAlign: "center" }}>
+                    {[...Array(5)].map(star => {
+                      return <Icon name="star" size="large" />
+                    })}
+                  </div>
                   <br />
                   No more ants!
                 </Card.Header>
@@ -93,14 +105,11 @@ class Home extends React.Component {
             <Card className="review">
               <Card.Content>
                 <Card.Header style={style.title}>
-                  <span style={{ textAlign: "center" }}>
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                  </span>
-                  <br />
+                <div style={{ textAlign: "center" }}>
+                    {[...Array(5)].map(star => {
+                      return <Icon name="star" size="large" />
+                    })}
+                  </div>
                   <br />
                   Peace of Mind!
                 </Card.Header>
@@ -119,14 +128,9 @@ class Home extends React.Component {
             <Card className="review">
               <Card.Content>
                 <Card.Header style={style.title}>
-                  <span style={{ textAlign: "center" }}>
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                    <Icon name="star" size="big" />
-                  </span>
-                  <br />
+                <div style={{ textAlign: "center" }}>
+                    <StarRating />
+                  </div>
                   <br />
                   We love Bright Pest Solutions!
                 </Card.Header>
@@ -142,8 +146,10 @@ class Home extends React.Component {
             </Card>
           </Card.Group>
         </div>
-          <SocialMedia />
+        <SocialMedia />
+        <StarRating />
       </div>
+    
     );
   }
 }
@@ -191,6 +197,7 @@ const style = {
     fontSize: "18px",
     lineHeight: "19px",
     color: "#FFFFFF",
+    textAlign: "center",
   },
   body: {
     fontFamily: "Poppins",
