@@ -1,6 +1,7 @@
 import React from "react";
-import { Form, Button, Header } from "semantic-ui-react";
+import { Form, Button, Header, } from "semantic-ui-react";
 import axios from "axios";
+import { AuthConsumer, } from "../providers/AuthProvider";
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class ContactForm extends React.Component {
   render() {
     const { value } = this.state;
     return (
-      <Form className="yellow-muted" style={{ padding: "35px" }} onSubmit={this.handleSubmit}>
+      <Form className="yellow-muted" style={{ padding: "35px"}} onSubmit={this.handleSubmit}>
         <Header style={style.form}>How May We Help You?</Header>
         <br />
         <Form.Field>
@@ -135,7 +136,7 @@ class ContactForm extends React.Component {
             Message:
           </label>
         </Form.Field>
-        <Form.TextArea style={{ height: "242px" }}></Form.TextArea>
+        <Form.TextArea ></Form.TextArea>
         <Button type="submit" style={style.button}>
           Submit
         </Button>
@@ -161,7 +162,18 @@ class ContactForm extends React.Component {
   onMessageChange(event) {
     this.setState({ message: event.target.value });
   }
+};
+
+export default class ConnectedContactForm extends React.Component {
+  render() {
+    return(
+      <AuthConsumer>
+        {auth => <ContactForm { ...this.props } auth={auth}/>}
+      </AuthConsumer>
+    )
+  }
 }
+
 
 const style = {
   form: {
@@ -180,4 +192,4 @@ const style = {
     lineHeight: "19px",
   },
 };
-export default ContactForm;
+

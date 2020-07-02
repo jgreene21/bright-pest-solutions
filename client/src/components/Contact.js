@@ -9,8 +9,8 @@ import Schedule from "../images/Schedule.png";
 class Contact extends React.Component {
   render() {
     return (
-      <Container style={{ marginTop: "50px" }}>
-        <Grid centered stackable columns={2}>
+      <Container>
+        <Grid centered columns={2}>
           <Grid.Column width={7}>
             <h1 style={style.header}>Contact Us</h1>
             <p style={style.body}>
@@ -26,8 +26,8 @@ class Contact extends React.Component {
             <ContactForm />
           </Grid.Column>
         </Grid>
-        <Grid centered stackable columns={2} style={{ marginBottom: "150px" }}>
-          <Grid.Column width={7} style={{ marginTop: "-275px" }}>
+        <Grid centered columns={2} style={{ marginBottom: "150px" }}>
+          <Grid.Column width={7}>
             <Segment inverted >
               <p style={style.appointment}>Book your appointment today!</p>
             </Segment>

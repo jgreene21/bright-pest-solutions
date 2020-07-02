@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Icon } from "semantic-ui-react";
 import { FaStar } from "react-icons/fa";
 
 const StarRating = () => {

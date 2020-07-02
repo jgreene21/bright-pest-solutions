@@ -1,29 +1,22 @@
 import React from "react";
-import {
-  Image,
-  Grid,
-  Segment,
-  Card,
-  Icon,
-  BreadcrumbDivider,
-} from "semantic-ui-react";
+import { Image, Grid, Segment } from "semantic-ui-react";
 import House from "../images/home.jpg";
 import Pet from "../images/Pet.png";
 import SmallLogo from "../images/SmallLogo.png";
 import NoContract from "../images/NoContract.png";
 import ContactForm from "./ContactForm";
 import SocialMedia from "./SocialMedia";
-import StarRating from "./StarRating";
+import Review from "./Review";
 
 class Home extends React.Component {
   render() {
     return (
       <div className="content">
         <Grid stackable columns={2}>
-          <Grid.Column width={12}>
-            <Image src={House} />
+          <Grid.Column width={11}>
+            <Image src={House}  />
           </Grid.Column>
-          <Grid.Column width={4}>
+          <Grid.Column width={5}>
             <ContactForm />
           </Grid.Column>
         </Grid>
@@ -79,77 +72,10 @@ class Home extends React.Component {
             marginRight: "10px",
           }}
         >
-          <Card.Group itemsPerRow={3} style={{ margin: "15px" }}>
-            <Card className="review">
-              <Card.Content>
-                <Card.Header style={style.title}>
-                  <div style={{ textAlign: "center" }}>
-                    {[...Array(5)].map(star => {
-                      return <Icon name="star" size="large" />
-                    })}
-                  </div>
-                  <br />
-                  No more ants!
-                </Card.Header>
-                <br />
-                <Card.Description style={{ color: "white" }}>
-                  Since Bright Pest Solutions sprayed my house a few months ago
-                  I haven’t seen anymore ants in my home, even with all the
-                  construction in my neighborhood. Such a relief.
-                </Card.Description>
-              </Card.Content>
-              <Card.Content style={style.signature}>
-                - James T. (Saratoga Springs)
-              </Card.Content>
-            </Card>
-            <Card className="review">
-              <Card.Content>
-                <Card.Header style={style.title}>
-                <div style={{ textAlign: "center" }}>
-                    {[...Array(5)].map(star => {
-                      return <Icon name="star" size="large" />
-                    })}
-                  </div>
-                  <br />
-                  Peace of Mind!
-                </Card.Header>
-                <br />
-                <Card.Description style={style.body}>
-                  Just so happy with Bright Pest Solutions results. I feel a
-                  great peace of mind knowing that I’m protecting my home from
-                  insects while keeping my children and pets safe from harsh
-                  chemicals.
-                </Card.Description>
-              </Card.Content>
-              <Card.Content style={style.signature}>
-                - Jane C. (Lehi)
-              </Card.Content>
-            </Card>
-            <Card className="review">
-              <Card.Content>
-                <Card.Header style={style.title}>
-                <div style={{ textAlign: "center" }}>
-                    <StarRating />
-                  </div>
-                  <br />
-                  We love Bright Pest Solutions!
-                </Card.Header>
-                <br />
-                <Card.Description style={style.body}>
-                  Thanks so much for your professional and friendly services.
-                  I’m so thrilled with the results and the process. Thank you.
-                </Card.Description>
-              </Card.Content>
-              <Card.Content style={style.signature}>
-                - Mark L. (Sandy)
-              </Card.Content>
-            </Card>
-          </Card.Group>
+          <Review />
         </div>
         <SocialMedia />
-        <StarRating />
       </div>
-    
     );
   }
 }
@@ -190,30 +116,6 @@ const style = {
     lineSpacing: "3",
     textAlign: "center",
     color: "#F5CE42",
-  },
-  title: {
-    fontFamily: "Poppins",
-    fontWeight: 600,
-    fontSize: "18px",
-    lineHeight: "19px",
-    color: "#FFFFFF",
-    textAlign: "center",
-  },
-  body: {
-    fontFamily: "Poppins",
-    fontWeight: 300,
-    fontSize: "13px",
-    lineHeight: "19px",
-    color: "#FFFFFF",
-  },
-  signature: {
-    fontFamily: "Poppins",
-    fontWeight: 300,
-    fontSize: "13px",
-    lineHeight: "19px",
-    color: "#FFFFFF",
-    textAlign: "right",
-    border: "none",
   },
 };
 

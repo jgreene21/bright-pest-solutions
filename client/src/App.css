@@ -25,7 +25,7 @@
 
 .icon {
   height: "50px";
-  width: "50px"
+  width: "50px";
 }
 
 .bugs {
@@ -59,33 +59,19 @@
       rgba(245, 206, 66, 0.75)
     ),
     rgba(245, 206, 66, 0.75) !important;
-  flex-grow: 1;
-  order: 0;
-  margin: 20px
+    min-width: 400px;
 }
-
-/* .menu:hover {
-  text-decoration: underline;
-} */
 
 .menu-container {
-  position: relative; 
+  position: relative;
 }
 
-.menu-items {
-    position: absolute;
-    bottom: 0px;
-    right: 140px;
-    background: none;
-  }
+input[type="radio"] {
+  display: none;
+}
 
-  input[type="radio"] {
-    display: none;
-  }
-
-  .star {
-    cursor: pointer;
-    transition: color 200ms;
-    margin: 3px
-  }
- 
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+  margin: 3px;
+}
