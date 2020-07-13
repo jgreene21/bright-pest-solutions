@@ -14,7 +14,9 @@ const SocialMedia = () => (
         />
       </span>
       <span style={{ marginRight: "10px" }}>
+      <a href="https://www.instagram.com/jeffgreene23/" className= "hvr-grow-shadow">
         <Media as={Image} src={Instagram} />
+      </a>
       </span>
       <span>
         <Media as={Image} src={Twitter} />

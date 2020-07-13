@@ -7,8 +7,10 @@ import SocialMedia from "./SocialMedia";
 import Schedule from "../images/Schedule.png";
 
 class Contact extends React.Component {
+
   render() {
     return (
+      
       <Container>
         <Grid centered columns={2}>
           <Grid.Column width={7}>
@@ -31,11 +33,14 @@ class Contact extends React.Component {
             <Segment inverted >
               <p style={style.appointment}>Book your appointment today!</p>
             </Segment>
-            <Image src={Schedule} />
+            <iframe style={style.iframe}
+            width="480"
+            height="600"
+            src='https://squareup.com/appointments/book/910n1tuza8svg2/QPQYCW64FC4N9/start'></iframe>
           </Grid.Column>
           <Grid.Column width={7} style={{marginTop: "60px"}}>
             <p style={style.body}>
-              Ready to rid your home of pests, find a day and time that works
+              <span style={style.byePest}>Ready to be pest free,</span> find a day and time that works
               for you and we will send you an email reminder of your
               appointment.
             </p>
@@ -62,16 +67,31 @@ const style = {
     fontFamily: "Poppins",
     fontWeight: "normal",
     fontSize: "20px",
-    lineHeight: "30px",
+    lineHeight: "1.6",
   },
   appointment: {
+      color: "white",
+      textTransform: "uppercase",
+      fontFamily: "Poppins",
+      letterSpacing: "1px",
+      lineHeight: "38px",
+      borderRadius: "3px",
+      fontWeight: "200",
+      fontSize: "14px",
+      textAlign: "center"
+    },
+  iframe: {
+    border: "1px solid #f5ce42",
+    boxSizing: "border-box",
+    boxShadow: "0px 4px 4px rgba(0.25, 0, 0, 0.25)",
+    color: "#f5ce42", 
+  },
+  byePest: {
     fontFamily: "Poppins",
-    fontStyle: "italic",
-    fontWeight: 500,
-    fontSize: "16px",
-    lineHeight: "24px",
-    textAlign: "center",
-    padding: "20px",
+    fontWeight: "normal",
+    fontSize: "28px",
+    lineHeight: "1.6",
+    textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   },
 };
 

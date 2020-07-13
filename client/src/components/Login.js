@@ -1,8 +1,6 @@
 import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Form, } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-// import {Link} from 'react-router-dom'
+import { Form, Button, } from 'semantic-ui-react';
 
 class Login extends React.Component {
   state = { email: '', password: '' }
@@ -23,9 +21,6 @@ class Login extends React.Component {
 
     return (
       <div>
-        <div >
-          <h1 >Admin Login</h1>
-        </div>
         <div>
           <Form onSubmit={this.handleSubmit}>
             <Form.Input
@@ -39,6 +34,12 @@ class Login extends React.Component {
             />
             <Form.Input
               label="Password"
+              style={{
+                fontFamily: "Poppins !important",
+                fontWeight: "normal",
+                fontSize: "13px",
+                lineHeight: "19px",
+              }}
               required
               name='password'
               value={password}
@@ -48,10 +49,7 @@ class Login extends React.Component {
             />
           <div>
             <div style={{width:"45%"}}>
-            <Link to='/'>Cancel</Link>
-            </div>
-            <div style={{width:"45%"}}>
-            <div  onClick={this.handleSubmit}>Login</div>
+            <Button style={style.button} onClick={this.handleSubmit}>Login</Button>
             </div>
           </div>
           </Form>
@@ -59,14 +57,36 @@ class Login extends React.Component {
       </div>
     )
   }
+};
+
+const style ={
+  button: {
+    backgroundColor: "black",
+    color: "white",
+    height: "40px",
+    textTransform: "uppercase",
+    fontFamily: "Poppins",
+    letterSpacing: "1px",
+    lineHeight: "38px",
+    padding: "0 28px",
+    borderRadius: "3px",
+    fontWeight: "200",
+    fontSize: "14px",
+    cursor: "pointer",
+    display: "inline-block",
+    marginBottom: "30px",
+    textAlign: "center"
+  }
 }
 
 export default class ConnectedLogin extends React.Component {
   render() {
     return (
+      <div style={{marginRight: "50px", marginLeft: "50px", marginBottom: "420px"}}>
       <AuthConsumer>
         {auth => <Login {...this.props} auth={auth} />}
       </AuthConsumer>
+      </div>
     )
   }
 }

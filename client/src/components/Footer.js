@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Footer = () => (
   <div className="footer" align="right">
-  <StyledP style={window.innerWidth < 900 ? {fontSize:'2vw'}: {fontSize:'1vw'}} style={style.footer}>
+  <StyledP style={style.footer}>
     <Icon name="copyright outline" fitted size={window.innerWidth < 900 ? 'small' : ''} /> Bright Pest Solutions LLC. All rights reserved.
     </StyledP>
 </div>

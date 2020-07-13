@@ -12,7 +12,7 @@ class Navbar extends React.Component {
       <>
         <Container style={{ marginBottom: "-30px" }}>
           <div className="contact">
-            <Link to="/">
+            <Link to="/" className= "hvr-grow-shadow">
               <Bright as={Image} src={Logo} />
             </Link>
             <Contact>
@@ -25,17 +25,17 @@ class Navbar extends React.Component {
           <YellowHeader as={Image} src={Header} />
           <Menu borderless style={{ border: "none", boxShadow: "none" }}>
             <Position as={Menu.Menu} position="right">
-              <Link to="/">
+              <Link to="/" className= "hvr-grow-shadow">
                 <NavItems as={Menu.Item} style={style.menu}>
                   Home
                 </NavItems>
               </Link>
-              <Link to="/oursolution">
+              <Link to="/oursolution" className= "hvr-grow-shadow">
                 <NavItems as={Menu.Item} style={style.menu}>
                   Our Solution
                 </NavItems>
               </Link>
-              <Link to="/contact">
+              <Link to="/contact" className= "hvr-grow-shadow">
                 <NavItems as={Menu.Item} style={style.menu}>
                   Contact Us
                 </NavItems>
@@ -92,10 +92,10 @@ const YellowHeader = styled.div`
 const NavItems = styled.div`
    {
     font-size: 14px;
-    margin-right: 50px;
+    padding: 40px;
     @media (max-width: 700px) {
       font-size: 10px;
-      margin-right: 20px;
+      padding: 20px;
     }
   }
 `;

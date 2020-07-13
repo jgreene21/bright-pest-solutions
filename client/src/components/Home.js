@@ -14,9 +14,17 @@ class Home extends React.Component {
       <div className="content">
         <Grid stackable columns={2}>
           <Grid.Column width={11}>
-            <Image src={House}  />
+            <Image src={House} />
           </Grid.Column>
           <Grid.Column width={5}>
+            <a
+              target="_top"
+              className= "hvr-grow-shadow"
+              style={style.button}
+              href="https://square.site/book/QPQYCW64FC4N9/bright-pest-solutions"
+            >
+              Book an Appointment Now 
+            </a>
             <ContactForm />
           </Grid.Column>
         </Grid>
@@ -117,6 +125,23 @@ const style = {
     textAlign: "center",
     color: "#F5CE42",
   },
+  button: {
+    backgroundColor: "black",
+    color: "white",
+    height: "40px",
+    textTransform: "uppercase",
+    fontFamily: "Poppins",
+    letterSpacing: "1px",
+    lineHeight: "38px",
+    padding: "0 28px",
+    borderRadius: "3px",
+    fontWeight: "200",
+    fontSize: "14px",
+    cursor: "pointer",
+    display: "inline-block",
+    marginBottom: "30px",
+    textAlign: "center"
+  }
 };
 
 export default Home;
