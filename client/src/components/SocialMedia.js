@@ -1,22 +1,22 @@
 import React from "react";
 import {Image} from "semantic-ui-react";
-import Facebook from "../images/facebook.jpg";
-import Instagram from "../images/instagram.png";
-import Twitter from "../images/twitter.png";
+import Facebook from "../images/Facebook.svg";
+import Instagram from "../images/Instagram.svg";
+import Twitter from "../images/Twitter.svg";
 import styled from 'styled-components';
 
 const SocialMedia = () => (
   <>
     <div className="container2" style={{ marginTop: "-100px" }}>
       <span style={{ marginRight: "5px" }}>
-        <FB as={Image}
-          src={Facebook}
-        />
-      </span>
-      <span style={{ marginRight: "10px" }}>
       <a href="https://www.instagram.com/jeffgreene23/" className= "hvr-grow-shadow">
         <Media as={Image} src={Instagram} />
       </a>
+      </span>
+      <span style={{ marginRight: "5px" }}>
+        <FB as={Image}
+          src={Facebook}
+        />
       </span>
       <span>
         <Media as={Image} src={Twitter} />

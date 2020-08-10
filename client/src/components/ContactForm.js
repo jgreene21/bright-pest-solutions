@@ -12,23 +12,33 @@ class ContactForm extends React.Component {
       phone: "",
       preference: "",
       message: "",
+      sent: false,
+      buttonText: 'Send Message'
     };
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    axios({
-      method: "POST",
-      url: "http://localhost:3001/send",
-      data: this.state,
-    }).then((response) => {
-      if (response.data.status === "success") {
-        alert("Message Sent.");
-        this.resetForm();
-      } else if (response.data.status === "fail") {
-        alert("Message failed to send.");
-      }
-    });
+  handleSubmit = (e) => {
+    e.preventDefault()
+  
+    this.setState({
+        buttonText: '...sending'
+    })
+  
+    let data = {
+        name: this.state.name,
+        email: this.state.email,
+        phone: this.state.phone,
+        preference: this.state.preference,
+        message: this.state.message
+    }
+    
+    axios.post('API_URI', data)
+    .then( res => {
+        this.setState({ sent: true }, this.resetForm())
+    })
+    .catch( () => {
+      console.log('Message not sent')
+    })
   }
 
   resetForm() {
@@ -38,6 +48,7 @@ class ContactForm extends React.Component {
       phone: "",
       preference: "",
       message: "",
+      buttonText: 'Message Sent'
     });
   }
 

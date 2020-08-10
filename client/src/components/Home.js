@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Grid, Segment } from "semantic-ui-react";
+import { Image, Grid, Segment, } from "semantic-ui-react";
 import House from "../images/home.jpg";
 import Pet from "../images/Pet.png";
 import SmallLogo from "../images/SmallLogo.png";
@@ -7,6 +7,7 @@ import NoContract from "../images/NoContract.png";
 import ContactForm from "./ContactForm";
 import SocialMedia from "./SocialMedia";
 import Review from "./Review";
+
 
 class Home extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class Home extends React.Component {
           <Grid.Column width={5}>
             <a
               target="_top"
-              className= "hvr-grow-shadow"
+              className= "hvr-grow-shadow-button"
               style={style.button}
               href="https://square.site/book/QPQYCW64FC4N9/bright-pest-solutions"
             >

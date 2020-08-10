@@ -4,7 +4,7 @@ import RightArrow from "../images/RightArrow.png";
 import LeftArrow from "../images/LeftArrow.png";
 import ContactForm from "./ContactForm";
 import SocialMedia from "./SocialMedia";
-import Schedule from "../images/Schedule.png";
+
 
 class Contact extends React.Component {
 

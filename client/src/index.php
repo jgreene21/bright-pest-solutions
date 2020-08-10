@@ -1,58 +1,79 @@
-var express = require('express');
-var router = express.Router();
-var nodemailer = require('nodemailer');
-var cors = require('cors');
-const creds = require('./config');
+<?php
 
-var transport = {
-    host: 'Mail.yahoo.com', // Don’t forget to replace with the SMTP host of your provider
-    port: 587,
-    auth: {
-    user: creds.USER,
-    pass: creds.PASS
+echo 'hello world'; 
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json");
+
+$rest_json = file_get_contents("php://input");
+$_POST = json_decode($rest_json, true);
+
+$errors = array();
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+  if (empty($_POST['email'])) {
+    $errors[] = 'Email is empty';
+  } else {
+    $email = $_POST['email'];
+    
+    // validating the email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Invalid email';
+    }
+  }
+  if (empty($_POST['message'])) {
+    $errors[] = 'Message is empty';
+  } else {
+    $message = $_POST['message'];
+  }
+  if (empty($errors)) {
+    $date = date('j, F Y h:i A');
+    
+    $emailBody = "
+    <html>
+    <head>
+    <title>$email is contacting you</title>
+    </head>
+    <body style=\"background-color:#fafafa;\">
+    <div style=\"padding:20px;\">
+    Date: <span style=\"color:#888\">$date</span>
+    <br>
+    Email: <span style=\"color:#888\">$email</span>
+    <br>
+    Message: <div style=\"color:#888\">$message</div>
+    </div>
+    </body>
+    </html>
+    ";
+    
+    $headers = 	'From: Contact Form <contact@mydomain.com>' . "\r\n" .
+    "Reply-To: $email" . "\r\n" .
+    "MIME-Version: 1.0\r\n" . 
+    "Content-Type: text/html; charset=iso-8859-1\r\n";
+
+    $to = 'contact@example.com';
+    $subject = 'Contacting you';
+    
+    if (mail($to, $subject, $emailBody, $headers)) {
+      $sent = true;	
+    }
   }
 }
+?>
 
-var transporter = nodemailer.createTransport(transport)
+  <?php if (!empty($errors)) : ?> 
 
-transporter.verify((error, success) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Server is ready to take messages');
-  }
-});
+            {
+  "status": "fail",
+  "error":  <?php echo json_encode($errors) ?>
+}
+  <?php endif; ?>
+  
+  
+  <?php if (isset($sent) && $sent === true) : ?> 
 
-router.post('/send', (req, res, next) => {
-  var name = req.body.name
-  var email = req.body.email
-  var phone = req.body.phone
-  var preference = req.body.preference
-  var message = req.body.message
-  var content = `name: ${name} \n email: ${email} \n phone: ${phone} \n preference: ${preference} \n message: ${message} `
-
-  var mail = {
-    from: name,
-    to: 'RECEIVING_EMAIL_ADDRESS_GOES_HERE',  // Change to email address that you want to receive messages on
-    subject: 'New Message from Contact Form',
-    text: content
-  }
-
-  transporter.sendMail(mail, (err, data) => {
-    if (err) {
-      res.json({
-        status: 'fail'
-      })
-    } else {
-      res.json({
-       status: 'success'
-      })
-    }
-  })
-})
-
-const app = express()
-app.use(cors())
-app.use(express.json())
-app.use('/', router)
-app.listen(3002)
+{
+  "status": "success",
+  "message": "Your data was successfully submitted"
+}
+  <?php endif; ?>
