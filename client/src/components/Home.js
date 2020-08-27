@@ -4,9 +4,9 @@ import House from "../images/home.jpg";
 import Pet from "../images/Pet.png";
 import SmallLogo from "../images/SmallLogo.png";
 import NoContract from "../images/NoContract.png";
-import ContactForm from "./ContactForm";
 import SocialMedia from "./SocialMedia";
 import Review from "./Review";
+import MyForm from "./MyForm";
 
 
 class Home extends React.Component {
@@ -26,7 +26,7 @@ class Home extends React.Component {
             >
               Book an Appointment Now 
             </a>
-            <ContactForm />
+            <MyForm/>
           </Grid.Column>
         </Grid>
         <br />

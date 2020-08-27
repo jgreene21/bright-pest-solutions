@@ -1,60 +1,24 @@
 import React from "react";
-import {Image} from "semantic-ui-react";
+import { Image } from "semantic-ui-react";
 import Facebook from "../images/Facebook.svg";
 import Instagram from "../images/Instagram.svg";
 import Twitter from "../images/Twitter.svg";
-import styled from 'styled-components';
 
 const SocialMedia = () => (
   <>
-    <div className="container2" style={{ marginTop: "-100px" }}>
-      <span style={{ marginRight: "5px" }}>
-      <a href="https://www.instagram.com/jeffgreene23/" className= "hvr-grow-shadow">
-        <Media as={Image} src={Instagram} />
-      </a>
-      </span>
-      <span style={{ marginRight: "5px" }}>
-        <FB as={Image}
-          src={Facebook}
-        />
-      </span>
-      <span>
-        <Media as={Image} src={Twitter} />
-      </span>
+    <div className="container2" style={{ marginTop: "-100px", marginBottom: "50px" }}>
+      <Image.Group size="mini">
+        <a
+          href="https://www.instagram.com/jeffgreene23/"
+          className="hvr-grow-shadow"
+        >
+          <Image src={Instagram} />
+        </a>
+        <Image src={Facebook} />
+        <Image src={Twitter} />
+        </Image.Group>
     </div>
-    <p style={style.social}>lets be social</p>
   </>
 );
-
-const FB = styled.div`{
-  height: 35px;
-  width: 55px;
-  @media(max-width: 1000px) {
-    height: 28px;
-    width: 44px;
-    }
-}
-`
-const Media = styled.div`{
-  height: 35px;
-  width: 35px;
-  @media(max-width: 1000px) {
-    height: 28px;
-    width: 28px;
-    }
-}
-`
-
-const style = {
-  social: {
-    fontFamily: "Poppins",
-    fontWeight: 300,
-    fontSize: "10px",
-    lineHeight: "13px",
-    textAlign: "center",
-    marginTop: "10px",
-    marginBottom: "50px",
-  },
-}
 
 export default SocialMedia;

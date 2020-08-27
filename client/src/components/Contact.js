@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Image, Container, Segment } from "semantic-ui-react";
 import RightArrow from "../images/RightArrow.png";
 import LeftArrow from "../images/LeftArrow.png";
-import ContactForm from "./ContactForm";
+import MyForm from "./MyForm";
 import SocialMedia from "./SocialMedia";
 
 
@@ -25,7 +25,7 @@ class Contact extends React.Component {
             />
           </Grid.Column>
           <Grid.Column width={7}>
-            <ContactForm />
+            <MyForm/>
           </Grid.Column>
         </Grid>
         <Grid centered columns={2} style={{ marginBottom: "150px" }}>

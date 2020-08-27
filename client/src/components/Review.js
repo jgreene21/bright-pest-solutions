@@ -52,7 +52,9 @@ class Review extends React.Component {
           <Card.Content>
             <Card.Header style={style.title}>
               <div style={{ textAlign: "center" }}>
-                <StarRating />
+              {[...Array(5)].map((star) => {
+                  return <Icon name="star" size="large" />;
+                })}
               </div>
               <br />
               We love Bright Pest Solutions!
