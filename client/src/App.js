@@ -16,7 +16,7 @@ const App = () => (
     <FetchAdmin>
       <Navbar />
       <Switch>
-        <Route exact path="/bright-pest-solutions" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/oursolution" component={About} />
         <Route exact path="/contact" component={Contact} />
         {/* <ProtectedRoute exact path="/adminpanel" component={AdminPanel} /> */}
